@@ -1,6 +1,4 @@
 import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -14,10 +12,8 @@ export default function IndexPage() {
     "https://www.youtube.com/embed/QHjhKPTG_vw?si=Zqf8Y-_dimkYME_z";
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-12">
         <div className="inline-block max-w-2xl text-center justify-center">
-          {/* <h1 className={title({ color: "violet" })}>David Mora Hidalgo</h1>
-          {/* <h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1> */}
           <h2 className={title({ color: "violet" })}>M9 UF2 Proyecto Final</h2>
           <h4 className={subtitle({ class: "mt-4" })}>
             Construido con la librería <span className="text-primary">Next UI</span>:

@@ -1,6 +1,6 @@
 # Reborn App Concept
 
-This is a concept test of the DAW's final project. It is built using the template for creating applications using Next.js 13 (pages directory) and NextUI (v2).
+This is a concept test of the DAW's final project. It is built with a template for creating applications using Next.js 13 (pages directory) and NextUI (v2).
 
 ## Technologies Used
 

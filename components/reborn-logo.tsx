@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-// import DarkLogo from "@/**/reborn-logo-darkmode.png";
-// import LightLogo from "@/**/reborn-logo-lightmode.png";
 import { useTheme } from "next-themes";
 
 interface MyImageProps {

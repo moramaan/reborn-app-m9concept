@@ -1,6 +1,4 @@
 import {
-  Button,
-  Kbd,
   Link,
   Input,
   Navbar as NextUINavbar,
@@ -19,16 +17,9 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-} from "@/components/icons";
+import { SearchIcon } from "@/components/icons";
 
 import RebornLogo from "@/components/reborn-logo";
-// import { Logo } from "@/components/icons";
 
 export const Navbar = () => {
   const searchInput = (
@@ -38,11 +29,6 @@ export const Navbar = () => {
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
-      // endContent={
-      //   <Kbd className="hidden lg:inline-block" keys={["command"]}>
-      //     K
-      //   </Kbd>
-      // }
       labelPlacement="outside"
       placeholder="Search..."
       endContent={
