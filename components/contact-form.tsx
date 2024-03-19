@@ -11,9 +11,11 @@ const ContactForm: React.FC = () => {
   const [nameIsInvalid, setNameIsInvalid] = useState(false);
   const [lastNameIsInvalid, setLastNameIsInvalid] = useState(false);
   const [messageIsInvalid, setMessageIsInvalid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     const audio = document.getElementById("emailSent") as HTMLAudioElement;
     audio.play();
     setTimeout(() => {
@@ -21,7 +23,8 @@ const ContactForm: React.FC = () => {
       setLastName("");
       setEmail("");
       setMessage("");
-    }, 500);
+      setIsLoading(false);
+    }, 1000);
   };
 
   const validateEmail = (email: string) => {
@@ -127,6 +130,7 @@ const ContactForm: React.FC = () => {
           color="primary"
           radius="full"
           fullWidth
+          isLoading={isLoading}
         >
           Enviar Formulario
         </Button>
