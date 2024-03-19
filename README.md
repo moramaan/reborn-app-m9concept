@@ -20,7 +20,11 @@ To create a new project based on this template using `create-next-app`, run the 
 npx create-next-app -e https://github.com/nextui-org/next-pages-template
 ```
 
-To use all the base code as it is, clone or fork the repository.
+To use all the base code as it is, clone or fork the repository and run the following command:
+
+```bash
+npm install && npm run dev
+```
 
 ## License
 
