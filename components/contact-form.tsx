@@ -14,14 +14,14 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // You can implement your form submission logic here
-    // For example, you can use fetch or axios to send the form data to a server
-    // After successful submission, you can show a success message
-    // setToast({ text: 'Form submitted successfully', type: 'success' });
-    setName("");
-    setLastName("");
-    setEmail("");
-    setMessage("");
+    const audio = document.getElementById("emailSent") as HTMLAudioElement;
+    audio.play();
+    setTimeout(() => {
+      setName("");
+      setLastName("");
+      setEmail("");
+      setMessage("");
+    }, 500);
   };
 
   const validateEmail = (email: string) => {
@@ -36,20 +36,24 @@ const ContactForm: React.FC = () => {
     setMailIsInvalid(!isValid);
   };
 
-  const validateInput = (input: string, setInputInvalid: React.Dispatch<React.SetStateAction<boolean>>) => {
+  const validateInput = (
+    input: string,
+    setInputInvalid: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
     if (!input) {
       setInputInvalid(false);
       return;
     }
     // Regex pattern to allow alphanumeric characters and some safe special characters
-    const pattern = /^[a-zA-Z0-9 !@#$%^&*()_+\-=\[\]{};:"\\|,.<>\/?]*$/;
+    const pattern = /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};:"\\|,.<>\/?\n]*$/;
     const isValid = pattern.test(input);
+
     setInputInvalid(!isValid);
   };
-  
 
   return (
     <>
+      <audio id="emailSent" src="/audio/Email_sent.mp3" preload="auto"></audio>
       <form onSubmit={handleSubmit}>
         <div className="md:flex text-left">
           <Input
@@ -58,7 +62,6 @@ const ContactForm: React.FC = () => {
             labelPlacement="outside"
             value={name}
             isInvalid={nameIsInvalid}
-            // setName(e.target.value);
             onChange={(e) => {
               setName(e.target.value);
               validateInput(e.target.value, setNameIsInvalid);

@@ -5,7 +5,6 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 import MediaVideo from "@/components/MediaVideo";
-import { Suspense } from "react";
 
 export default function IndexPage() {
   const videoUrl =
@@ -46,9 +45,7 @@ export default function IndexPage() {
         <div className="max-w-5xl w-full text-center items-center justify-between font-mono text-sm sm:mt-5">
           <h4 className={title({ color: "yellow" })}>Aprende con Midudev!</h4>
           <div className="rounded mt-3">
-            <Suspense fallback={<p>Loading video...</p>}>
               <MediaVideo url={videoUrl} />
-            </Suspense>
           </div>
         </div>
       </section>
